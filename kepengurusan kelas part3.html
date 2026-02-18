@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelas X PPLG 1 </title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #4e73df, #1cc88a);
+    color: white;
+    transition: 0.4s;
+}
+
+.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.3);
+}
+
+nav button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+    width: 220px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.3);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid white;
+}
+
+.walikelas { border: 3px solid #ff9800; }
+.ketua { border: 3px solid gold; }
+.wakil { border: 3px solid silver; }
+
+/* STRUKTUR */
+.struktur {
+    padding: 30px;
+    text-align: center;
+}
+
+.wali-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.atas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.bawah {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ABSEN */
+.absen-section {
+    padding: 40px 20px;
+}
+
+.absen-container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 95%;
+    margin: auto;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.absen-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Nama rata kiri */
+#absenTable td:nth-child(2) {
+    text-align: left;
+    padding-left: 20px;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.dark-mode .absen-container {
+    background: #1e1e1e;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <h2>Kelas X PPLG 1</h2>
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+</nav>
+
+<header>
+    <h1>Struktur Kepengurusan Kelas</h1>
+    <p>Tahun Ajaran 2025/2026</p>
+</header>
+
+<section class="struktur">
+    <div class="wali-wrapper">
+        <div class="card walikelas">
+            <img src="https://via.placeholder.com/100">
+            <h3>Wali Kelas</h3>
+            <p>Herman Setiabudi</p>
+        </div>
+    </div>
+
+    <div class="atas">
+        <div class="card ketua">
+            <img src="Ketua kelas.JPG">
+            <h3>Ketua Kelas</h3>
+            <p>Moch. Fawaz Y.P</p>
+        </div>
+
+        <div class="card wakil">
+            <img src="https://via.placeholder.com/100">
+            <h3>Wakil Ketua</h3>
+            <p>Hersya Putri Utami</p>
+        </div>
+    </div>
+
+    <div class="bawah">
+        <div class="card">
+            <img src="https://via.placeholder.com/100">
+            <h3>Sekretaris 1</h3>
+            <p>Piya Nopiyanti</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/100">
+            <h3>Sekretaris 2</h3>
+            <p>Dede Oktaviani</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/100">
+            <h3>Bendahara 1</h3>
+            <p>Muhammad Malik Ibrahim</p>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/100">
+            <h3>Bendahara 2</h3>
+            <p>Tasya Agistiani</p>
+        </div>
+    </div>
+</section>
+
+<section class="absen-section">
+    <h2>Daftar Absen Siswa</h2>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari nama siswa..." onkeyup="searchTable()">
+    </div>
+
+    <div class="absen-container">
+        <table id="absenTable">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Siswa</th>
+                    <th>Jenis Kelamin</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<tr><td>1</td><td>ALENA LAKIRA</td><td>Perempuan</td></tr>
+<tr><td>2</td><td>ALIFA PUTRI HERVIZA</td><td>Perempuan</td></tr>
+<tr><td>3</td><td>ALMIRA KHAERUNISA</td><td>Perempuan</td></tr>
+<tr><td>4</td><td>ANITA FEBRIANTI MAULIDA</td><td>Perempuan</td></tr>
+<tr><td>5</td><td>ARYA DWI HERWANTO</td><td>Laki-Laki</td></tr>
+<tr><td>6</td><td>AULIA AGUSTINA</td><td>Perempuan</td></tr>
+<tr><td>7</td><td>AZKA FATIMAZ AHRA</td><td>Perempuan</td></tr>
+<tr><td>8</td><td>BRYAN RIZQULLOH</td><td>Laki-Laki</td></tr>
+<tr><td>9</td><td>DEDE OKTAVIANI</td><td>Perempuan</td></tr>
+<tr><td>10</td><td>DESWITA HERAWATI</td><td>Perempuan</td></tr>
+<tr><td>11</td><td>DEVKA APRILIO</td><td>Laki-Laki</td></tr>
+<tr><td>12</td><td>ELVIRA AULIA RAHMAT</td><td>Perempuan</td></tr>
+<tr><td>13</td><td>ERLITA OKTAVIANI</td><td>Perempuan</td></tr>
+<tr><td>14</td><td>FADYA AIDA AZZAHRA</td><td>Perempuan</td></tr>
+<tr><td>15</td><td>FITRIA MAULIDA SUHERMAN</td><td>Perempuan</td></tr>
+<tr><td>16</td><td>HALWA AQILA</td><td>Perempuan</td></tr>
+<tr><td>17</td><td>HERSYA PUTRI UTAMI</td><td>Perempuan</td></tr>
+<tr><td>18</td><td>KEISYA AIRA MUCHTAR</td><td>Perempuan</td></tr>
+<tr><td>19</td><td>KIRANA ADZIKYA NUR</td><td>Perempuan</td></tr>
+<tr><td>20</td><td>LATIFA KHAYLA AZZAHRA</td><td>Perempuan</td></tr>
+<tr><td>21</td><td>M. GALANG ALIDRUS</td><td>Laki-Laki</td></tr>
+<tr><td>22</td><td>MAYA ANGRAENI</td><td>Perempuan</td></tr>
+<tr><td>23</td><td>MIRZA RAQILLA</td><td>Laki-Laki</td></tr>
+<tr><td>24</td><td>MOCH. FAWAZ YUDE PRADANA</td><td>Laki-Laki</td></tr>
+<tr><td>25</td><td>MUHAMAD MALIK IBRAHIM</td><td>Laki-Laki</td></tr>
+<tr><td>26</td><td>MUHAMAD RIZKY FABIANSYAH</td><td>Laki-Laki</td></tr>
+<tr><td>27</td><td>MUHAMMAD DAVIAN MELVIN</td><td>Laki-Laki</td></tr>
+<tr><td>28</td><td>MUHAMMAD ERLANGGA SUPANDI</td><td>Laki-Laki</td></tr>
+<tr><td>29</td><td>MUHAMMAD IQBAL TRI PERMANA</td><td>Laki-Laki</td></tr>
+<tr><td>30</td><td>NAJWA ALKAIRA KUSNADI</td><td>Perempuan</td></tr>
+<tr><td>31</td><td>NAYMA NURSILAWATI</td><td>Perempuan</td></tr>
+<tr><td>32</td><td>NINDYA CARLA HARTONO</td><td>Perempuan</td></tr>
+<tr><td>33</td><td>NOPIYANTI JULMA MUTIARA</td><td>Perempuan</td></tr>
+<tr><td>34</td><td>OVI AMELIA PUTRI</td><td>Perempuan</td></tr>
+<tr><td>35</td><td>PIYA NOPIYANTI</td><td>Perempuan</td></tr>
+<tr><td>36</td><td>QUEENESYA HANANIA GUNARI</td><td>Perempuan</td></tr>
+<tr><td>37</td><td>R FRANS ROMA WERMASUBUN</td><td>Laki-Laki</td></tr>
+<tr><td>38</td><td>RAESHA ZIKRA BAIHAQI</td><td>Laki-Laki</td></tr>
+<tr><td>39</td><td>REVA ROSDIANA</td><td>Perempuan</td></tr>
+<tr><td>40</td><td>RIFKY SUHANDI</td><td>Laki-Laki</td></tr>
+<tr><td>41</td><td>SHIFA ANERAH FAUZIYYA</td><td>Perempuan</td></tr>
+<tr><td>42</td><td>SITI ANNISA</td><td>Perempuan</td></tr>
+<tr><td>43</td><td>SITI HANIFAH</td><td>Perempuan</td></tr>
+<tr><td>44</td><td>SITI JIHAN ZAKIYYAH</td><td>Perempuan</td></tr>
+<tr><td>45</td><td>SITI NUR SINTA</td><td>Perempuan</td></tr>
+<tr><td>46</td><td>SITI NURHALIMAH</td><td>Perempuan</td></tr>
+<tr><td>47</td><td>TASYA AGISTIANI</td><td>Perempuan</td></tr>
+<tr><td>48</td><td>Wasiah Permata Sari</td><td>Perempuan</td></tr>
+
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; Kepengurusan Kelas X PPLG 1</p>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
+
+function searchTable() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let rows = document.querySelectorAll("#absenTable tbody tr");
+
+    rows.forEach(row => {
+        let nama = row.cells[1].textContent.toLowerCase();
+        row.style.display = nama.includes(input) ? "" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
